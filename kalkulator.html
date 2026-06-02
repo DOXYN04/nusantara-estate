@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kalkulator KPR Finansial - Nusantara Estate</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { navy: "#0F172A", abuBg: "#F8FAFC", abuBorder: "#E2E8F0" },
+          },
+        },
+      };
+    </script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+  </head>
+  <body
+    class="bg-abuBg text-gray-900 font-sans antialiased flex flex-col min-h-screen"
+  >
+    <nav
+      class="bg-navy border-b border-gray-800 sticky top-0 z-50 text-white shadow-md"
+    >
+      <div
+        class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between relative"
+      >
+        <a href="index.html" class="flex items-center space-x-3 group z-50">
+          <div
+            class="w-12 h-12 bg-white rounded-full flex items-center justify-center p-1"
+          >
+            <img
+              src="assets/logo_nusantara.png"
+              alt="Logo"
+              class="w-full h-full object-contain rounded-full"
+            />
+          </div>
+          <span
+            class="text-lg font-bold tracking-wider text-white whitespace-nowrap"
+            >NUSANTARA
+            <span class="text-gray-400 font-light">ESTATE</span></span
+          >
+        </a>
+        <button
+          id="menu-btn"
+          class="block md:hidden text-gray-300 hover:text-white z-50"
+        >
+          <i class="bi bi-list text-3xl"></i>
+        </button>
+        <div
+          id="menu"
+          class="hidden absolute top-0 left-0 w-full bg-navy p-6 pt-24 md:p-0 md:relative md:flex md:items-center md:justify-end space-y-4 md:space-y-0 space-x-0 md:space-x-1 text-sm font-medium flex-col md:flex-row ml-auto"
+        >
+          <a
+            href="index.html"
+            class="px-4 py-2 rounded-lg hover:bg-slate-800 transition block"
+            >Beranda</a
+          >
+          <a
+            href="katalog.html"
+            class="px-4 py-2 rounded-lg hover:bg-slate-800 transition block"
+            >Katalog</a
+          >
+          <a
+            href="kalkulator.html"
+            class="px-4 py-2 rounded-lg bg-slate-800 text-white block"
+            >Kalkulator KPR</a
+          >
+          <a
+            href="tentang.html"
+            class="px-4 py-2 rounded-lg hover:bg-slate-800 transition block"
+            >Tentang Kami</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <main
+      class="flex-grow max-w-7xl mx-auto px-6 py-16 w-full grid grid-cols-1 lg:grid-cols-12 gap-8"
+    >
+      <div
+        class="lg:col-span-5 bg-white border border-abuBorder rounded-2xl p-6 md:p-8 shadow-sm h-fit"
+      >
+        <div class="mb-6">
+          <h1 class="text-xl font-black text-navy uppercase">
+            Simulasi Angsuran
+          </h1>
+          <p class="text-xs text-gray-400 uppercase mt-1">
+            Suku bunga tetap bersih 5% per tahun PT Nio Tama Properti
+          </p>
+        </div>
+
+        <div
+          id="error-box"
+          class="hidden mb-4 p-3 bg-red-50 border border-red-200 text-red-600 rounded-xl text-xs font-semibold"
+        >
+          <i class="bi bi-exclamation-triangle-fill mr-1.5"></i
+          ><span id="error-message"></span>
+        </div>
+
+        <div class="space-y-4">
+          <div>
+            <label
+              class="text-xs font-bold text-gray-500 uppercase block mb-1.5"
+              >Tipe Unit Rumah</label
+            >
+            <select
+              id="tipe_rumah"
+              class="w-full border border-abuBorder rounded-xl p-3 bg-abuBg text-sm focus:outline-navy"
+            >
+              <option value="">-- Pilih Tipe Rumah --</option>
+              <option value="166000000">Tipe 36 - Rp 166.000.000</option>
+              <option value="230000000">Tipe 54 - Rp 230.000.000</option>
+            </select>
+          </div>
+          <div>
+            <label
+              class="text-xs font-bold text-gray-500 uppercase block mb-1.5"
+              >Harga Properti Terkunci (Rp)</label
+            >
+            <input
+              type="number"
+              id="harga_rumah"
+              readonly
+              class="w-full border border-abuBorder rounded-xl p-3 bg-gray-100 text-sm font-semibold text-gray-600 focus:outline-none"
+            />
+          </div>
+          <div>
+            <label
+              class="text-xs font-bold text-gray-500 uppercase block mb-1.5"
+              >Pilihan Uang Muka / DP (Min 10%)</label
+            >
+            <select
+              id="uang_muka"
+              class="w-full border border-abuBorder rounded-xl p-3 bg-abuBg text-sm focus:outline-navy"
+            >
+              <option value="">-- Pilih Nominal Uang Muka --</option>
+              <option value="16600000">
+                DP Minimal Tipe 36 (10%) - Rp 16.600.000
+              </option>
+              <option value="23000000">
+                DP Minimal Tipe 54 (10%) - Rp 23.000.000
+              </option>
+            </select>
+          </div>
+          <div>
+            <label
+              class="text-xs font-bold text-gray-500 uppercase block mb-1.5"
+              >Tenor Jangka Waktu</label
+            >
+            <select
+              id="tenor"
+              class="w-full border border-abuBorder rounded-xl p-3 bg-abuBg text-sm focus:outline-navy"
+            >
+              <option value="">-- Pilih Jangka Waktu --</option>
+              <script>
+                for (let i = 1; i <= 20; i++) {
+                  document.write(
+                    `<option value="${i}">${i} Tahun (${i * 12} Bulan)</option>`,
+                  );
+                }
+              </script>
+            </select>
+          </div>
+          <button
+            onclick="hitungKPR()"
+            class="w-full bg-navy text-white font-bold py-3.5 rounded-xl hover:bg-black transition text-sm shadow-md mt-2"
+          >
+            Proses Hitung Angsuran
+          </button>
+        </div>
+
+        <div
+          id="wrapper-hasil"
+          class="hidden mt-6 pt-6 border-t border-abuBorder text-center bg-slate-50 rounded-2xl p-5 border border-dashed border-navy/30"
+        >
+          <p
+            class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-2"
+          >
+            Estimasi Angsuran Bulanan
+          </p>
+          <h3
+            id="teks_hasil"
+            class="text-2xl font-black text-navy tracking-tight block w-full text-center"
+          ></h3>
+        </div>
+      </div>
+
+      <div
+        class="lg:col-span-7 bg-white border border-abuBorder rounded-2xl p-6 shadow-sm h-fit"
+      >
+        <div class="mb-4">
+          <h3 class="text-lg font-bold text-navy uppercase tracking-wide">
+            Brosur Tabel Angsuran Resmi
+          </h3>
+          <p class="text-xs text-gray-400 uppercase mt-0.5">
+            Referensi resmi kalkulasi data pembayaran berkala PT Nio Pratama
+          </p>
+        </div>
+        <div
+          class="flex justify-center bg-abuBg p-2 rounded-xl border border-gray-200 overflow-hidden"
+        >
+          <img
+            src="assets/Tabel_Angsuran.jpg.jpeg"
+            alt="Brosur Tabel Angsuran"
+            class="w-full h-auto rounded-lg shadow-sm"
+          />
+        </div>
+      </div>
+    </main>
+
+    <footer class="bg-navy text-white border-t border-gray-800 py-16">
+      <div
+        class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12"
+      >
+        <div>
+          <h3 class="text-xl font-bold mb-4">PT. Nio Pratama</h3>
+          <p class="text-sm text-gray-400 leading-relaxed max-w-md">
+            Kawasan kota terpadu mandiri Provinsi Jambi.
+          </p>
+        </div>
+        <div class="flex flex-col space-y-4">
+          <h3 class="text-sm font-bold uppercase text-gray-400">
+            City Marketing Office
+          </h3>
+          <div class="flex items-start space-x-3 text-sm text-gray-300">
+            <i class="bi bi-geo-alt-fill text-rose-500 text-xl"></i>
+            <p>
+              Jalan Lintas Sumatera, Deretan Hotel Ratu, Sarolangun, Jambi,
+              37481
+            </p>
+          </div>
+          <div class="flex items-center space-x-3 text-sm text-gray-300">
+            <i class="bi bi-telephone-fill text-emerald-500 text-lg"></i
+            ><span>081334534506</span>
+          </div>
+          <div class="flex items-center space-x-3 text-sm text-gray-300">
+            <i class="bi bi-envelope-fill text-blue-400 text-lg"></i
+            ><a href="mailto:niotamaproperti@gmail.com" class="hover:underline"
+              >niotamaproperti@gmail.com</a
+            >
+          </div>
+          <div class="flex items-center space-x-3 text-sm text-gray-300">
+            <i class="bi bi-facebook text-blue-500 text-lg"></i
+            ><span>Nusantara Estate</span>
+          </div>
+          <div class="flex items-center space-x-3 text-sm text-gray-300">
+            <i class="bi bi-instagram text-pink-500 text-lg"></i
+            ><span>Nusantara Estate</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const tipe = document.getElementById("tipe_rumah");
+      const harga = document.getElementById("harga_rumah");
+      const dp = document.getElementById("uang_muka");
+      const errorBox = document.getElementById("error-box");
+      const errorMsg = document.getElementById("error-message");
+
+      tipe.addEventListener("change", function () {
+        harga.value = this.value;
+        if (this.value === "166000000") dp.value = "16600000";
+        else if (this.value === "230000000") dp.value = "23000000";
+        else dp.value = "";
+        errorBox.classList.add("hidden");
+      });
+
+      function hitungKPR() {
+        errorBox.classList.add("hidden");
+        const valHarga = parseFloat(harga.value);
+        const valDP = parseFloat(dp.value);
+        const valTenor = parseInt(document.getElementById("tenor").value);
+
+        if (!valHarga || !valDP || !valTenor) {
+          errorMsg.innerText = "Nominal data input simulasi KPR belum lengkap!";
+          errorBox.classList.remove("hidden");
+          return;
+        }
+        if (valDP < valHarga * 0.1) {
+          errorMsg.innerText =
+            "Nominal Uang Muka tidak boleh kurang dari 10% harga rumah!";
+          errorBox.classList.remove("hidden");
+          return;
+        }
+
+        const pinjaman = valHarga - valDP;
+        const bungaTahunan = 0.05;
+        const totalBulan = valTenor * 12;
+        const totalBunga = pinjaman * bungaTahunan * valTenor;
+        const cicilanPerBulan = (pinjaman + totalBunga) / totalBulan;
+
+        const formatRupiah =
+          Math.round(cicilanPerBulan).toLocaleString("id-ID");
+        document.getElementById("teks_hasil").innerHTML =
+          `Rp ${formatRupiah} <span class="text-xs text-gray-500 font-normal">/ bulan</span>`;
+        document.getElementById("wrapper-hasil").classList.remove("hidden");
+      }
+
+      document.getElementById("menu-btn").addEventListener("click", () => {
+        document.getElementById("menu").classList.toggle("hidden");
+      });
+    </script>
+  </body>
+</html>

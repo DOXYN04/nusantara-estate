@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tentang Kami - Nusantara Estate</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { navy: "#0F172A", abuBg: "#F8FAFC", abuBorder: "#E2E8F0" },
+          },
+        },
+      };
+    </script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+  </head>
+  <!-- PENYESUAIAN: Memasang gambar 50.jpg sebagai background statis (fixed) di body -->
+  <body
+    class="text-gray-900 font-sans antialiased flex flex-col min-h-screen relative bg-cover bg-center bg-fixed"
+    style="background-image: url(&quot;assets/50.jpg&quot;)"
+  >
+    <!-- LAPISAN REDUP (OVERLAY) GLOBAL: Membuat latar belakang gambar meredup secara profesional -->
+    <div
+      class="absolute inset-0 bg-navy/70 backdrop-blur-[2px] z-0 pointer-events-none"
+    ></div>
+
+    <!-- NAVBAR RESPONSIF -->
+    <nav
+      class="bg-navy border-b border-gray-800 sticky top-0 z-50 text-white shadow-md w-full"
+    >
+      <div
+        class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between relative"
+      >
+        <a href="index.html" class="flex items-center space-x-3 group z-50">
+          <div
+            class="w-12 h-12 bg-white rounded-full flex items-center justify-center p-1 transition transform group-hover:scale-105"
+          >
+            <img
+              src="assets/logo_nusantara.png"
+              alt="Logo"
+              class="w-full h-full object-contain rounded-full"
+            />
+          </div>
+          <span
+            class="text-lg font-bold tracking-wider text-white whitespace-nowrap"
+            >NUSANTARA
+            <span class="text-gray-400 font-light">ESTATE</span></span
+          >
+        </a>
+
+        <button
+          id="menu-btn"
+          class="block md:hidden text-gray-300 hover:text-white focus:outline-none z-50"
+        >
+          <i class="bi bi-list text-3xl"></i>
+        </button>
+
+        <div
+          id="menu"
+          class="hidden absolute top-0 left-0 w-full bg-navy p-6 pt-24 md:p-0 md:relative md:flex md:items-center md:justify-end space-y-4 md:space-y-0 space-x-0 md:space-x-1 text-sm font-medium flex-col md:flex-row border-b border-gray-800 md:border-none shadow-xl md:shadow-none ml-auto"
+        >
+          <a
+            href="index.html"
+            class="px-4 py-2 rounded-lg hover:bg-slate-800 transition block"
+            >Beranda</a
+          >
+          <a
+            href="katalog.html"
+            class="px-4 py-2 rounded-lg hover:bg-slate-800 transition block"
+            >Katalog</a
+          >
+          <a
+            href="kalkulator.html"
+            class="px-4 py-2 rounded-lg hover:bg-slate-800 transition block"
+            >Kalkulator KPR</a
+          >
+          <a
+            href="tentang.html"
+            class="px-4 py-2 rounded-lg bg-slate-800 text-white block"
+            >Tentang Kami</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- KONTEN UTAMA PROFIL KORPORAT (Diberi z-10 agar berada di atas lapisan redup) -->
+    <main class="flex-grow max-w-4xl mx-auto px-6 py-16 w-full z-10 relative">
+      <!-- BAGIAN 1: DESKRIPSI PERUSAHAAN (Ditambahkan backdrop-blur pada kartu agar efek kaca transparan menyatu dengan background) -->
+      <section
+        class="bg-white/95 border border-abuBorder rounded-2xl p-8 md:p-12 shadow-xl mb-12 backdrop-blur-md"
+      >
+        <div class="text-center mb-8">
+          <span
+            class="text-xs font-bold bg-slate-100 text-navy px-3 py-1 rounded-full uppercase tracking-widest"
+            >Profil Korporat</span
+          >
+          <h1
+            class="text-3xl font-black text-navy tracking-tight uppercase mt-3"
+          >
+            PT Nio Pratama
+          </h1>
+          <p class="text-xs text-gray-400 uppercase tracking-wider mt-1">
+            Nio Tama Properti Developer Group
+          </p>
+        </div>
+
+        <div
+          class="text-gray-600 text-sm md:text-base leading-relaxed space-y-6 text-justify"
+        >
+          <p>
+            <strong class="text-navy text-lg">PT Nio Pratama</strong> (Nio Tama
+            Properti) adalah perusahaan pengembang properti (<em
+              >real estate developer</em
+            >) inovatif yang berkomitmen untuk menghadirkan hunian berkualitas,
+            strategis, dan bernilai investasi tinggi bagi masyarakat Indonesia.
+            Didirikan dengan visi yang kuat pada Juli 2024, perusahaan kami
+            bergerak cepat dalam merancang kawasan hunian modern yang
+            mengintegrasikan keselarasan lingkungan, kenyamanan keluarga, dan
+            pertumbuhan ekonomi daerah.
+          </p>
+          <p>
+            Salah satu mahakarya utama kami adalah
+            <strong class="text-navy">Nusantara Estate</strong>, sebuah proyek
+            kota mandiri terintegrasi seluas 100 hektar yang berlokasi di
+            Provinsi Jambi. Melalui proyek ini, PT Nio Pratama menerapkan konsep
+            pembangunan berkelanjutan (<em>sustainable development</em>) dengan
+            memadukan <em>Eco Culture</em> (kawasan hijau ramah lingkungan),
+            fasilitas komersial terpadu, serta sistem keamanan modern
+            <em>One Gate System</em>.
+          </p>
+          <p>
+            Kami percaya bahwa sebuah rumah bukan sekadar tempat berteduh,
+            melainkan pondasi utama bagi kebahagiaan keluarga dan masa depan
+            generasi penerus. Oleh karena itu, setiap unit yang kami bangun,
+            baik tipe subsidi (Tipe 36) maupun komersil premium (Tipe 54) selalu
+            mengutamakan standar arsitektur terbaik, transparansi finansial, dan
+            legalitas yang terjamin.
+          </p>
+        </div>
+      </section>
+
+      <!-- BAGIAN 2: VISI & MISI DENGAN GRID MODERN -->
+      <section class="grid grid-cols-1 md:grid-cols-12 gap-8">
+        <!-- KARTU VISI (4 Kolom) - Menggunakan semi-transparan navy/90 -->
+        <div
+          class="md:col-span-4 bg-navy/90 text-white rounded-2xl p-8 shadow-xl flex flex-col justify-between border border-gray-800 backdrop-blur-md"
+        >
+          <div>
+            <div
+              class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center text-amber-400 mb-6 shadow-inner"
+            >
+              <i class="bi bi-award-fill text-2xl"></i>
+            </div>
+            <h2 class="text-xl font-black uppercase tracking-wide mb-4">
+              Visi Kami
+            </h2>
+            <p
+              class="text-sm text-gray-300 leading-relaxed italic text-justify"
+            >
+              "Menjadi perusahaan pengembang properti terkemuka, terpercaya, dan
+              menjadi pionir dalam pembangunan kawasan kota mandiri berbasis
+              lingkungan yang inovatif di Indonesia."
+            </p>
+          </div>
+        </div>
+
+        <!-- KARTU MISI (8 Kolom) -->
+        <div
+          class="md:col-span-8 bg-white/95 border border-abuBorder rounded-2xl p-8 shadow-xl backdrop-blur-md"
+        >
+          <div class="flex items-center space-x-4 mb-6">
+            <div
+              class="w-12 h-12 bg-slate-100 rounded-xl flex items-center justify-center text-navy shadow-sm"
+            >
+              <i class="bi bi-flag-fill text-xl"></i>
+            </div>
+            <h2 class="text-xl font-black text-navy uppercase tracking-wide">
+              Misi Kami
+            </h2>
+          </div>
+
+          <ol class="space-y-4 text-sm text-gray-600 list-none">
+            <li class="flex items-start space-x-4">
+              <span
+                class="flex-shrink-0 w-6 h-6 rounded-full bg-slate-100 text-navy font-bold text-xs flex items-center justify-center border border-abuBorder mt-0.5"
+                >1</span
+              >
+              <span
+                ><strong class="text-navy"
+                  >Menyediakan Hunian Berkualitas Tinggi:</strong
+                >
+                Menghadirkan produk properti yang kokoh, bernilai estetika
+                modern, dan nyaman bagi berbagai lapisan masyarakat, baik segmen
+                subsidi maupun komersial premium.</span
+              >
+            </li>
+            <li class="flex items-start space-x-4">
+              <span
+                class="flex-shrink-0 w-6 h-6 rounded-full bg-slate-100 text-navy font-bold text-xs flex items-center justify-center border border-abuBorder mt-0.5"
+                >2</span
+              >
+              <span
+                ><strong class="text-navy"
+                  >Menerapkan Konsep Eco-Living:</strong
+                >
+                Mempelopori tata ruang kawasan yang asri, sehat, dan seimbang
+                dengan alam guna mendukung gaya hidup berkelanjutan (<em
+                  >Eco Culture</em
+                >) bagi penghuninya.</span
+              >
+            </li>
+            <li class="flex items-start space-x-4">
+              <span
+                class="flex-shrink-0 w-6 h-6 rounded-full bg-slate-100 text-navy font-bold text-xs flex items-center justify-center border border-abuBorder mt-0.5"
+                >3</span
+              >
+              <span
+                ><strong class="text-navy"
+                  >Menjaga Kepercayaan & Legalitas:</strong
+                >
+                Mengutamakan transparansi data, kepastian hukum, dan kemudahan
+                akses finansial demi memberikan rasa aman maksimal bagi
+                konsumen.</span
+              >
+            </li>
+            <li class="flex items-start space-x-4">
+              <span
+                class="flex-shrink-0 w-6 h-6 rounded-full bg-slate-100 text-navy font-bold text-xs flex items-center justify-center border border-abuBorder mt-0.5"
+                >4</span
+              >
+              <span
+                ><strong class="text-navy"
+                  >Mendorong Pertumbuhan Ekonomi:</strong
+                >
+                Membangun infrastruktur dan area komersial terpadu yang mampu
+                menciptakan lapangan kerja baru serta menaikkan nilai investasi
+                wilayah lokal.</span
+              >
+            </li>
+            <li class="flex items-start space-x-4">
+              <span
+                class="flex-shrink-0 w-6 h-6 rounded-full bg-slate-100 text-navy font-bold text-xs flex items-center justify-center border border-abuBorder mt-0.5"
+                >5</span
+              >
+              <span
+                ><strong class="text-navy"
+                  >Pelayanan Profesional Berkelanjutan:</strong
+                >
+                Menyiapkan tim Customer Service yang responsif dan profesional
+                mendampingi konsumen hingga penyerahan kunci unit.</span
+              >
+            </li>
+          </ol>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER (Diberi z-10 agar berada di atas background) -->
+    <footer
+      class="bg-navy text-white border-t border-gray-800 py-16 mt-auto z-10 relative w-full"
+    >
+      <div
+        class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12"
+      >
+        <div>
+          <h3 class="text-xl font-bold tracking-wider mb-4">PT. Nio Pratama</h3>
+          <p class="text-sm text-gray-400 leading-relaxed max-w-md">
+            Kawasan mandiri kota terintegrasi seluas 100 hektar di wilayah
+            Provinsi Jambi.
+          </p>
+        </div>
+        <div class="flex flex-col space-y-4">
+          <h3
+            class="text-sm font-bold tracking-wider uppercase text-gray-400 mb-1"
+          >
+            City Marketing Office
+          </h3>
+          <div class="flex items-start space-x-3 text-sm text-gray-300">
+            <i class="bi bi-geo-alt-fill text-rose-500 text-xl"></i>
+            <p>
+              Jalan Lintas Sumatera, Deretan Hotel Ratu, Sarolangun, Jambi,
+              37481
+            </p>
+          </div>
+          <div class="flex items-center space-x-3 text-sm text-gray-300">
+            <i class="bi bi-telephone-fill text-emerald-500 text-lg"></i
+            ><span>081334534506</span>
+          </div>
+          <div class="flex items-center space-x-3 text-sm text-gray-300">
+            <i class="bi bi-envelope-fill text-blue-400 text-lg"></i
+            ><a href="mailto:niotamaproperti@gmail.com" class="hover:underline"
+              >niotamaproperti@gmail.com</a
+            >
+          </div>
+          <div class="flex items-center space-x-3 text-sm text-gray-300">
+            <i class="bi bi-facebook text-blue-500 text-lg"></i
+            ><span>Nusantara Estate</span>
+          </div>
+          <div class="flex items-center space-x-3 text-sm text-gray-300">
+            <i class="bi bi-instagram text-pink-500 text-lg"></i
+            ><span>Nusantara Estate</span>
+          </div>
+        </div>
+      </div>
+      <div
+        class="max-w-7xl mx-auto px-6 mt-12 pt-6 border-t border-gray-800 text-center text-xs text-gray-500"
+      >
+        &copy; 2026 PT. Nio Pratama. All Rights Reserved.
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById("menu-btn").addEventListener("click", () => {
+        document.getElementById("menu").classList.toggle("hidden");
+      });
+    </script>
+  </body>
+</html>
