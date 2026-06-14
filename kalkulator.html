@@ -3,7 +3,39 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kalkulator KPR Finansial - Nusantara Estate</title>
+
+    <title>
+      Simulasi Cicilan KPR Terpercaya - Perumahan Nusantara Estate Sarolangun
+    </title>
+    <meta
+      name="description"
+      content="Gunakan kalkulator KPR Nusantara Estate untuk menghitung estimasi angsuran bulanan rumah Tipe 36 dan Tipe 55 di Sarolangun Jambi. Dilengkapi tabel angsuran terbaru resmi."
+    />
+    <meta
+      name="keywords"
+      content="perumahan nusantara estate sarolangun, perumahan sarolangun, nusantara estate, perumahan murah sarolangun, kalkulator kpr jambi, cicilan rumah jambi"
+    />
+    <meta name="robots" content="index, follow" />
+    <link
+      rel="canonical"
+      href="https://doxyn04.github.io/nusantara-estate/kalkulator.html"
+    />
+
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-GJPWZERY1P"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-GJPWZERY1P");
+    </script>
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -18,6 +50,8 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     />
+
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body
     class="bg-abuBg text-gray-900 font-sans antialiased flex flex-col min-h-screen"
@@ -34,7 +68,7 @@
           >
             <img
               src="assets/logo_nusantara.png"
-              alt="Logo"
+              alt="Logo Perumahan Nusantara Estate Sarolangun"
               class="w-full h-full object-contain rounded-full"
             />
           </div>
@@ -46,13 +80,13 @@
         </a>
         <button
           id="menu-btn"
-          class="block md:hidden text-gray-300 hover:text-white z-50"
+          class="block md:hidden text-gray-300 hover:text-white focus:outline-none z-50"
         >
           <i class="bi bi-list text-3xl"></i>
         </button>
         <div
           id="menu"
-          class="hidden absolute top-0 left-0 w-full bg-navy p-6 pt-24 md:p-0 md:relative md:flex md:items-center md:justify-end space-y-4 md:space-y-0 space-x-0 md:space-x-1 text-sm font-medium flex-col md:flex-row ml-auto"
+          class="hidden absolute top-0 left-0 w-full bg-navy p-6 pt-24 md:p-0 md:relative md:flex md:items-center md:justify-end space-y-4 md:space-y-0 space-x-0 md:space-x-1 text-sm font-medium flex-col md:flex-row border-b border-gray-800 md:border-none shadow-xl md:shadow-none ml-auto text-right"
         >
           <a
             href="index.html"
@@ -79,151 +113,190 @@
     </nav>
 
     <main
-      class="flex-grow max-w-7xl mx-auto px-6 py-16 w-full grid grid-cols-1 lg:grid-cols-12 gap-8"
+      class="flex-grow max-w-7xl mx-auto px-6 py-16 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-start"
     >
       <div
-        class="lg:col-span-5 bg-white border border-abuBorder rounded-2xl p-6 md:p-8 shadow-sm h-fit"
+        class="lg:col-span-7 bg-white border border-abuBorder rounded-2xl p-6 md:p-10 shadow-sm"
       >
-        <div class="mb-6">
-          <h1 class="text-xl font-black text-navy uppercase">
-            Simulasi Angsuran
+        <div class="mb-8">
+          <h1 class="text-2xl font-black text-navy uppercase tracking-tight">
+            SIMULASI CICILAN
           </h1>
-          <p class="text-xs text-gray-400 uppercase mt-1">
-            Suku bunga tetap bersih 5% per tahun PT Nio Tama Properti
+          <p class="text-xs text-gray-400 uppercase tracking-wider mt-1">
+            Hitung proyeksi angsuran bulanan hunian keluarga Anda secara presisi
           </p>
         </div>
 
-        <div
-          id="error-box"
-          class="hidden mb-4 p-3 bg-red-50 border border-red-200 text-red-600 rounded-xl text-xs font-semibold"
-        >
-          <i class="bi bi-exclamation-triangle-fill mr-1.5"></i
-          ><span id="error-message"></span>
-        </div>
-
-        <div class="space-y-4">
+        <div class="space-y-6">
           <div>
             <label
-              class="text-xs font-bold text-gray-500 uppercase block mb-1.5"
-              >Tipe Unit Rumah</label
+              class="block text-xs font-bold text-navy uppercase tracking-wider mb-2"
+              >Pilih Tipe Unit Rumah</label
             >
             <select
-              id="tipe_rumah"
-              class="w-full border border-abuBorder rounded-xl p-3 bg-abuBg text-sm focus:outline-navy"
+              id="tipe-rumah"
+              onchange="sesuaikanDataUnit()"
+              class="w-full bg-abuBg border border-abuBorder rounded-xl px-4 py-3.5 text-sm focus:outline-none focus:border-navy font-semibold text-gray-700"
             >
-              <option value="">-- Pilih Tipe Rumah --</option>
-              <option value="166000000">Tipe 36 - Rp 166.000.000</option>
-              <option value="230000000">Tipe 54 - Rp 230.000.000</option>
+              <option value="36">Tipe 36 (Subsidi) — Rp 166.000.000</option>
+              <option value="55">
+                Tipe 55 (Komersil Premium) — Rp 250.000.000
+              </option>
             </select>
           </div>
+
           <div>
             <label
-              class="text-xs font-bold text-gray-500 uppercase block mb-1.5"
-              >Harga Properti Terkunci (Rp)</label
+              class="block text-xs font-bold text-navy uppercase tracking-wider mb-2"
+              >Harga Properti</label
             >
             <input
-              type="number"
-              id="harga_rumah"
+              type="text"
+              id="harga-tampil"
+              class="w-full bg-gray-100 border border-abuBorder rounded-xl px-4 py-3.5 text-sm font-normal text-gray-700 focus:outline-none"
               readonly
-              class="w-full border border-abuBorder rounded-xl p-3 bg-gray-100 text-sm font-semibold text-gray-600 focus:outline-none"
             />
           </div>
+
           <div>
             <label
-              class="text-xs font-bold text-gray-500 uppercase block mb-1.5"
-              >Pilihan Uang Muka / DP (Min 10%)</label
+              class="block text-xs font-bold text-navy uppercase tracking-wider mb-2"
+              >Uang Muka / Down Payment (DP)</label
             >
-            <select
-              id="uang_muka"
-              class="w-full border border-abuBorder rounded-xl p-3 bg-abuBg text-sm focus:outline-navy"
-            >
-              <option value="">-- Pilih Nominal Uang Muka --</option>
-              <option value="16600000">
-                DP Minimal Tipe 36 (10%) - Rp 16.600.000
-              </option>
-              <option value="23000000">
-                DP Minimal Tipe 54 (10%) - Rp 23.000.000
-              </option>
-            </select>
+            <input
+              type="text"
+              id="input-dp"
+              oninput="
+                formatInputKeRupiah(this);
+                hitungSimulasiKPR();
+              "
+              placeholder="Masukkan angka..."
+              class="w-full bg-abuBg border border-abuBorder rounded-xl px-4 py-3.5 text-sm focus:outline-none focus:border-navy font-normal text-gray-700"
+            />
+            <div
+              id="error-dp-message"
+              class="text-xs text-red-600 font-semibold mt-2 hidden animate-pulse"
+            ></div>
           </div>
+
           <div>
             <label
-              class="text-xs font-bold text-gray-500 uppercase block mb-1.5"
-              >Tenor Jangka Waktu</label
+              class="block text-xs font-bold text-navy uppercase tracking-wider mb-2"
+              >Jangka Waktu Cicilan (Tenor)</label
             >
             <select
-              id="tenor"
-              class="w-full border border-abuBorder rounded-xl p-3 bg-abuBg text-sm focus:outline-navy"
+              id="input-tenor"
+              onchange="hitungSimulasiKPR()"
+              class="w-full bg-abuBg border border-abuBorder rounded-xl px-4 py-3.5 text-sm focus:outline-none focus:border-navy font-semibold text-gray-700"
             >
-              <option value="">-- Pilih Jangka Waktu --</option>
-              <script>
-                for (let i = 1; i <= 20; i++) {
-                  document.write(
-                    `<option value="${i}">${i} Tahun (${i * 12} Bulan)</option>`,
-                  );
-                }
-              </script>
+              <option value="1">1 Tahun (12 Bulan)</option>
+              <option value="2">2 Tahun (24 Bulan)</option>
+              <option value="3">3 Tahun (36 Bulan)</option>
+              <option value="4">4 Tahun (48 Bulan)</option>
+              <option value="5">5 Tahun (60 Bulan)</option>
+              <option value="6">6 Tahun (72 Bulan)</option>
+              <option value="7">7 Tahun (84 Bulan)</option>
+              <option value="8">8 Tahun (96 Bulan)</option>
+              <option value="9">9 Tahun (108 Bulan)</option>
+              <option value="10">10 Tahun (120 Bulan)</option>
+              <option value="11">11 Tahun (132 Bulan)</option>
+              <option value="12">12 Tahun (144 Bulan)</option>
+              <option value="13">13 Tahun (156 Bulan)</option>
+              <option value="14">14 Tahun (168 Bulan)</option>
+              <option value="15">15 Tahun (180 Bulan)</option>
+              <option value="16">16 Tahun (192 Bulan)</option>
+              <option value="17">17 Tahun (204 Bulan)</option>
+              <option value="18">18 Tahun (216 Bulan)</option>
+              <option value="19">19 Tahun (228 Bulan)</option>
+              <option value="20" selected>20 Tahun (240 Bulan)</option>
             </select>
           </div>
-          <button
-            onclick="hitungKPR()"
-            class="w-full bg-navy text-white font-bold py-3.5 rounded-xl hover:bg-black transition text-sm shadow-md mt-2"
-          >
-            Proses Hitung Angsuran
-          </button>
         </div>
 
         <div
-          id="wrapper-hasil"
-          class="hidden mt-6 pt-6 border-t border-abuBorder text-center bg-slate-50 rounded-2xl p-5 border border-dashed border-navy/30"
+          class="mt-10 p-6 bg-slate-900 text-white rounded-xl border border-gray-800 shadow-inner"
         >
           <p
-            class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-2"
+            class="text-xs uppercase tracking-widest text-gray-400 font-bold mb-1"
           >
             Estimasi Angsuran Bulanan
           </p>
-          <h3
-            id="teks_hasil"
-            class="text-2xl font-black text-navy tracking-tight block w-full text-center"
-          ></h3>
+          <div
+            id="hasil-angsuran"
+            class="text-3xl md:text-4xl font-black text-amber-400 tracking-tight"
+          >
+            Rp 0
+          </div>
+          <div
+            class="border-t border-gray-800 my-4 pt-3 grid grid-cols-2 gap-4 text-xs"
+          >
+            <div>
+              <span class="text-gray-400 block">Suku Bunga Efektif:</span
+              ><span id="hasil-bunga" class="font-bold text-gray-200"
+                >5.0% Fixed (Subsidi)</span
+              >
+            </div>
+            <div>
+              <span class="text-gray-400 block">Pokok Pinjaman KPR:</span
+              ><span id="hasil-pokok" class="font-bold text-gray-200"
+                >Rp 0</span
+              >
+            </div>
+          </div>
+          <p class="text-[10px] text-gray-500 italic mt-2 leading-tight">
+            *Perhitungan merupakan estimasi simulasi berdasarkan ketentuan umum
+            perbankan terkini. Suku bunga komersil dapat bervariasi.
+          </p>
         </div>
       </div>
 
-      <div
-        class="lg:col-span-7 bg-white border border-abuBorder rounded-2xl p-6 shadow-sm h-fit"
-      >
-        <div class="mb-4">
-          <h3 class="text-lg font-bold text-navy uppercase tracking-wide">
-            Brosur Tabel Angsuran Resmi
-          </h3>
-          <p class="text-xs text-gray-400 uppercase mt-0.5">
-            Referensi resmi kalkulasi data pembayaran berkala PT Nio Pratama
-          </p>
-        </div>
+      <div class="lg:col-span-5 flex flex-col justify-start w-full">
         <div
-          class="flex justify-center bg-abuBg p-2 rounded-xl border border-gray-200 overflow-hidden"
+          class="bg-white border border-abuBorder rounded-2xl p-6 md:p-8 shadow-sm w-full"
         >
-          <img
-            src="assets/Tabel_Angsuran.jpg.jpeg"
-            alt="Brosur Tabel Angsuran"
-            class="w-full h-auto rounded-lg shadow-sm"
-          />
+          <h3
+            class="text-base font-black text-navy uppercase tracking-wider mb-4"
+          >
+            Tabel Angsuran
+          </h3>
+          <div
+            class="bg-abuBg p-2 rounded-xl border border-abuBorder overflow-hidden w-full flex justify-center"
+          >
+            <img
+              src="assets/tabelangsurannew.jpeg"
+              alt="Tabel Brosur Angsuran Resmi Perumahan Nusantara Estate Sarolangun"
+              class="w-full h-auto max-w-full rounded-lg shadow-sm transition-transform duration-300 hover:scale-[1.02]"
+            />
+          </div>
+          <p class="text-xs text-gray-400 mt-4 text-justify leading-relaxed">
+            Gunakan lampiran tabel angsuran berikut ini sebagai gambaran
+            simulasi cicilan, untuk informasi lebih lanjut mohon hubungi admin
+            kami sesuai pada nomor yang tertera di bawah .
+          </p>
         </div>
       </div>
     </main>
 
-    <footer class="bg-navy text-white border-t border-gray-800 py-16">
+    <footer class="bg-navy text-white border-t border-gray-800 py-16 mt-auto">
       <div
         class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12"
       >
         <div>
-          <h3 class="text-xl font-bold mb-4">PT. Nio Pratama</h3>
-          <p class="text-sm text-gray-400 leading-relaxed max-w-md">
-            Kawasan kota terpadu mandiri Provinsi Jambi.
+          <h3 class="text-xl font-bold tracking-wider mb-4">
+            PT. Nio Tama Properti
+          </h3>
+          <p class="text-sm text-gray-400 leading-relaxed text-justify">
+            PT. Nio Tama Properti telah menjadi salah satu perusahaan properti
+            terkemuka dan paling terdiversifikasi di Indonesia. Dengan mengusung
+            konsep pembangunan berkelanjutan di Provinsi Jambi. Perseroan telah
+            berhasil meraih kepercayaan masyarakat luas dan menjadi perusahaan
+            properti yang terkemuka
           </p>
         </div>
         <div class="flex flex-col space-y-4">
-          <h3 class="text-sm font-bold uppercase text-gray-400">
+          <h3
+            class="text-sm font-bold tracking-wider uppercase text-gray-400 mb-1"
+          >
             City Marketing Office
           </h3>
           <div class="flex items-start space-x-3 text-sm text-gray-300">
@@ -245,65 +318,27 @@
           </div>
           <div class="flex items-center space-x-3 text-sm text-gray-300">
             <i class="bi bi-facebook text-blue-500 text-lg"></i
-            ><span>Nusantara Estate</span>
+            ><a
+              href="https://www.facebook.com/perumahan.nusantara.estate"
+              target="_blank"
+              class="hover:underline"
+              >Nusantara Estate</a
+            >
           </div>
           <div class="flex items-center space-x-3 text-sm text-gray-300">
             <i class="bi bi-instagram text-pink-500 text-lg"></i
-            ><span>Nusantara Estate</span>
+            ><a
+              href="https://www.instagram.com/perumahan.nusantara_estate?igsh=MTdiYWFwenhjd3Q3cA=="
+              target="_blank"
+              class="hover:underline"
+              >@perumahan.nusantara_estate</a
+            >
           </div>
         </div>
       </div>
     </footer>
 
-    <script>
-      const tipe = document.getElementById("tipe_rumah");
-      const harga = document.getElementById("harga_rumah");
-      const dp = document.getElementById("uang_muka");
-      const errorBox = document.getElementById("error-box");
-      const errorMsg = document.getElementById("error-message");
-
-      tipe.addEventListener("change", function () {
-        harga.value = this.value;
-        if (this.value === "166000000") dp.value = "16600000";
-        else if (this.value === "230000000") dp.value = "23000000";
-        else dp.value = "";
-        errorBox.classList.add("hidden");
-      });
-
-      function hitungKPR() {
-        errorBox.classList.add("hidden");
-        const valHarga = parseFloat(harga.value);
-        const valDP = parseFloat(dp.value);
-        const valTenor = parseInt(document.getElementById("tenor").value);
-
-        if (!valHarga || !valDP || !valTenor) {
-          errorMsg.innerText = "Nominal data input simulasi KPR belum lengkap!";
-          errorBox.classList.remove("hidden");
-          return;
-        }
-        if (valDP < valHarga * 0.1) {
-          errorMsg.innerText =
-            "Nominal Uang Muka tidak boleh kurang dari 10% harga rumah!";
-          errorBox.classList.remove("hidden");
-          return;
-        }
-
-        const pinjaman = valHarga - valDP;
-        const bungaTahunan = 0.05;
-        const totalBulan = valTenor * 12;
-        const totalBunga = pinjaman * bungaTahunan * valTenor;
-        const cicilanPerBulan = (pinjaman + totalBunga) / totalBulan;
-
-        const formatRupiah =
-          Math.round(cicilanPerBulan).toLocaleString("id-ID");
-        document.getElementById("teks_hasil").innerHTML =
-          `Rp ${formatRupiah} <span class="text-xs text-gray-500 font-normal">/ bulan</span>`;
-        document.getElementById("wrapper-hasil").classList.remove("hidden");
-      }
-
-      document.getElementById("menu-btn").addEventListener("click", () => {
-        document.getElementById("menu").classList.toggle("hidden");
-      });
-    </script>
+    <script src="js/main.js"></script>
+    <script src="js/kalkulator.js"></script>
   </body>
 </html>

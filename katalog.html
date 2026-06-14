@@ -3,7 +3,55 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Katalog Unit - Nusantara Estate</title>
+
+    <title>
+      Katalog Unit Properti Resmi - Perumahan Nusantara Estate Sarolangun
+    </title>
+    <meta
+      name="description"
+      content="Lihat spesifikasi teknis hunian Tipe 36 subsidi dan Tipe 55 komersil premium di perumahan murah jambi Nusantara Estate Sarolangun. Realisasi visual terlengkap dan terpercaya."
+    />
+    <meta
+      name="keywords"
+      content="perumahan nusantara estate sarolangun, perumahan sarolangun, nusantara estate, perumahan murah sarolangun, perumahan murah jambi, tipe 36 sarolangun, tipe 55 jambi"
+    />
+    <meta name="robots" content="index, follow" />
+    <link
+      rel="canonical"
+      href="https://doxyn04.github.io/nusantara-estate/katalog.html"
+    />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Nusantara Estate",
+        "alternateName": "PT. Nio Tama Properti",
+        "url": "https://doxyn04.github.io/nusantara-estate/",
+        "logo": "https://doxyn04.github.io/nusantara-estate/assets/logo_nusantara.png",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+62-813-3453-4506",
+          "contactType": "salesOffice"
+        }
+      }
+    </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-GJPWZERY1P"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-GJPWZERY1P");
+    </script>
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -18,33 +66,12 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     />
-    <style>
-      /* BASE STATE UNTUK SCROLL TRIGGER ANIMATION TEXT LANDSCAPE */
-      .reveal-text {
-        opacity: 0;
-        transform: translateY(30px);
-        transition:
-          opacity 1s cubic-bezier(0.16, 1, 0.3, 1),
-          transform 1s cubic-bezier(0.16, 1, 0.3, 1);
-      }
-      .reveal-text.aktif {
-        opacity: 1;
-        transform: translateY(0);
-      }
-      /* Menyembunyikan scrollbar bawaan pada slider gambar */
-      .no-scrollbar::-webkit-scrollbar {
-        display: none;
-      }
-      .no-scrollbar {
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-      }
-    </style>
+
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body
     class="bg-abuBg text-gray-900 font-sans antialiased flex flex-col min-h-screen"
   >
-    <!-- NAVBAR -->
     <nav
       class="bg-navy border-b border-gray-800 sticky top-0 z-50 text-white shadow-md"
     >
@@ -57,7 +84,7 @@
           >
             <img
               src="assets/logo_nusantara.png"
-              alt="Logo"
+              alt="Logo Utama Nusantara Estate"
               class="w-full h-full object-contain rounded-full"
             />
           </div>
@@ -75,7 +102,7 @@
         </button>
         <div
           id="menu"
-          class="hidden absolute top-0 left-0 w-full bg-navy p-6 pt-24 md:p-0 md:relative md:flex md:items-center md:justify-end space-y-4 md:space-y-0 space-x-0 md:space-x-1 text-sm font-medium flex-col md:flex-row ml-auto"
+          class="hidden absolute top-0 left-0 w-full bg-navy p-6 pt-24 md:p-0 md:relative md:flex md:items-center md:justify-end space-y-4 md:space-y-0 space-x-0 md:space-x-1 text-sm font-medium flex-col md:flex-row border-b border-gray-800 md:border-none shadow-xl md:shadow-none ml-auto text-right"
         >
           <a
             href="index.html"
@@ -89,7 +116,7 @@
           >
           <a
             href="kalkulator.html"
-            class="px-4 py-2 rounded-lg hover:bg-slate-800 transition block"
+            class="px-4 py-2 rounded-lg bg-slate-800 text-white block"
             >Kalkulator KPR</a
           >
           <a
@@ -101,7 +128,6 @@
       </div>
     </nav>
 
-    <!-- BAGIAN 1: GALERI UNIT PROPERTI -->
     <main class="flex-grow py-16 w-full">
       <div class="max-w-6xl mx-auto px-6">
         <div class="text-center mb-16">
@@ -109,21 +135,46 @@
             Galeri Unit Properti
           </h1>
           <p class="text-xs text-gray-400 uppercase tracking-widest mt-2">
-            Menyajikan rasio dimensi asli unit secara transparan
+            Daftar brosur digital lengkap klaster perumahan murah sarolangun
           </p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-24">
-          <!-- TIPE 36 CARD -->
           <div
             class="bg-white border border-abuBorder rounded-2xl p-6 shadow-sm flex flex-col justify-between"
           >
             <div>
-              <img
-                src="assets/36_tipe.jpg"
-                alt="Tipe 36"
-                class="w-full h-auto object-contain rounded-xl border border-abuBorder mb-6"
-              />
+              <div
+                class="relative h-64 overflow-hidden rounded-xl border border-abuBorder mb-6"
+              >
+                <div
+                  id="slider-kat-t36"
+                  class="flex w-full h-full transition-transform duration-500 ease-in-out"
+                >
+                  <img
+                    src="assets/36_tipe.jpg"
+                    alt="Fasad depan tipe 36 subsidi siang hari perumahan sarolangun"
+                    class="w-full h-full object-cover flex-shrink-0"
+                  />
+                  <img
+                    src="assets/tipe36malam.jpg"
+                    alt="Fasad depan tipe 36 subsidi malam hari perumahan murah jambi"
+                    class="w-full h-full object-cover flex-shrink-0"
+                  />
+                </div>
+                <button
+                  onclick="slideKatalog('slider-kat-t36', 0)"
+                  class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 text-white w-8 h-8 rounded-full flex items-center justify-center hover:bg-navy transition"
+                >
+                  <i class="bi bi-chevron-left text-xs"></i>
+                </button>
+                <button
+                  onclick="slideKatalog('slider-kat-t36', 1)"
+                  class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 text-white w-8 h-8 rounded-full flex items-center justify-center hover:bg-navy transition"
+                >
+                  <i class="bi bi-chevron-right text-xs"></i>
+                </button>
+              </div>
               <span
                 class="text-xs font-bold bg-blue-50 text-blue-700 px-3 py-1 rounded-full uppercase"
                 >Kredit Subsidi</span
@@ -153,23 +204,48 @@
             </div>
           </div>
 
-          <!-- TIPE 55 CARD -->
           <div
             class="bg-white border border-abuBorder rounded-2xl p-6 shadow-sm flex flex-col justify-between"
           >
             <div>
-              <img
-                src="assets/tipe_55.jpg"
-                alt="Tipe 55"
-                class="w-full h-auto object-contain rounded-xl border border-abuBorder mb-6"
-              />
+              <div
+                class="relative h-64 overflow-hidden rounded-xl border border-abuBorder mb-6"
+              >
+                <div
+                  id="slider-kat-t55"
+                  class="flex w-full h-full transition-transform duration-500 ease-in-out"
+                >
+                  <img
+                    src="assets/tipe_55.jpg"
+                    alt="Model unit komersil tipe 55 siang hari perumahan nusantara estate"
+                    class="w-full h-auto object-cover flex-shrink-0"
+                  />
+                  <img
+                    src="assets/tipe55malam.jpg"
+                    alt="Model unit komersil tipe 55 malam hari perumahan sarolangun jambi"
+                    class="w-full h-auto object-cover flex-shrink-0"
+                  />
+                </div>
+                <button
+                  onclick="slideKatalog('slider-kat-t55', 0)"
+                  class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 text-white w-8 h-8 rounded-full flex items-center justify-center hover:bg-navy transition"
+                >
+                  <i class="bi bi-chevron-left text-xs"></i>
+                </button>
+                <button
+                  onclick="slideKatalog('slider-kat-t55', 1)"
+                  class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 text-white w-8 h-8 rounded-full flex items-center justify-center hover:bg-navy transition"
+                >
+                  <i class="bi bi-chevron-right text-xs"></i>
+                </button>
+              </div>
               <span
                 class="text-xs font-bold bg-purple-50 text-purple-700 px-3 py-1 rounded-full uppercase"
                 >Komersil Premium</span
               >
               <h2 class="text-2xl font-black text-navy mt-4">Tipe 55</h2>
               <p class="text-2xl font-extrabold text-navy mt-1">
-                Rp 230.000.000
+                Rp 250.000.000
               </p>
               <p class="text-sm text-gray-500 mt-4 leading-relaxed">
                 Struktur bangunan mewah komersial premium. Dinding bata merah
@@ -184,7 +260,7 @@
                 >Simulasi Cicilan KPR</a
               >
               <a
-                href="https://wa.me/6281334534506?text=Halo%20Nusantara%20Estate,%20saya%20ingin%20pesan%20Unit%20Tipe%2055"
+                href="https://wa.me/6281334534506?text=Halo%20Nusantara%20Estate,%20saya%20ingin%20pesan%20Unit%20Tipe%2055%20"
                 target="_blank"
                 class="w-full text-center text-sm font-bold bg-navy text-white py-3.5 rounded-lg hover:bg-black transition flex items-center justify-center"
                 ><i class="bi bi-whatsapp mr-2"></i>Pesan Unit</a
@@ -194,13 +270,11 @@
         </div>
       </div>
 
-      <!-- BAGIAN 2: SEGMEN LAMAN "LANDSCAPE" -->
       <section
         id="landscape-section"
         class="w-full bg-navy text-white py-24 my-16 shadow-inner relative overflow-hidden"
       >
         <div class="max-w-6xl mx-auto px-6">
-          <!-- Judul Utama & Sub-judul -->
           <div
             id="landscape-text-trigger"
             class="text-center mb-12 reveal-text"
@@ -211,10 +285,9 @@
             <p
               class="text-xs text-gray-400 uppercase tracking-widest mt-2 mb-6"
             >
-              Tata ruang kawasan Nusantara Estate
+              Site plan tata ruang makro kawasan utama perumahan nusantara
+              estate sarolangun
             </p>
-
-            <!-- PAS: Penambahan Tombol Emas Google Maps dengan Efek Hover Berubah Warna -->
             <a
               href="https://maps.app.goo.gl/3Gi4vcjhxXjyTAn29?g_st=ac"
               target="_blank"
@@ -224,7 +297,6 @@
             </a>
           </div>
 
-          <!-- Kontainer Galeri Geser (Carousel Kontrol) -->
           <div class="relative group">
             <button
               onclick="scrollSlider('kiri')"
@@ -232,7 +304,6 @@
             >
               <i class="bi bi-chevron-left text-xl"></i>
             </button>
-
             <div
               id="landscape-slider"
               class="flex space-x-6 overflow-x-auto scroll-smooth no-scrollbar snap-x snap-mandatory px-2 py-4"
@@ -240,33 +311,32 @@
               <div class="flex-shrink-0 w-full md:w-[80%] snap-center">
                 <img
                   src="assets/landscape1.jpg"
-                  alt="Landscape 1"
+                  alt="Masterplan siteplan udara perumahan sarolangun murah"
                   class="w-full h-auto rounded-2xl shadow-2xl border border-gray-800 object-cover"
                 />
               </div>
               <div class="flex-shrink-0 w-full md:w-[80%] snap-center">
                 <img
                   src="assets/landscape2.jpg"
-                  alt="Landscape 2"
+                  alt="Peta kavling perumahan nusantara estate jambi"
                   class="w-full h-auto rounded-2xl shadow-2xl border border-gray-800 object-cover"
                 />
               </div>
               <div class="flex-shrink-0 w-full md:w-[80%] snap-center">
                 <img
                   src="assets/landscape3.jpg"
-                  alt="Landscape 3"
+                  alt="Konsep eco culture pemukiman kota mandiri sarolangun"
                   class="w-full h-auto rounded-2xl shadow-2xl border border-gray-800 object-cover"
                 />
               </div>
               <div class="flex-shrink-0 w-full md:w-[80%] snap-center">
                 <img
                   src="assets/landscape4.jpg"
-                  alt="Landscape 4"
+                  alt="Zona pengembangan jangka panjang perumahan murah jambi"
                   class="w-full h-auto rounded-2xl shadow-2xl border border-gray-800 object-cover"
                 />
               </div>
             </div>
-
             <button
               onclick="scrollSlider('kanan')"
               class="absolute right-4 top-1/2 -translate-y-1/2 z-40 bg-navy/60 hover:bg-white hover:text-navy text-white w-12 h-12 rounded-full flex items-center justify-center border border-white/20 transition-all shadow-lg backdrop-blur-sm opacity-0 group-hover:opacity-100"
@@ -277,7 +347,6 @@
         </div>
       </section>
 
-      <!-- BAGIAN 3: DENAH TERPISAH DI PALING BAWAH -->
       <div class="max-w-6xl mx-auto px-6 mt-16">
         <div
           class="w-full border border-abuBorder bg-white p-6 md:p-10 rounded-2xl shadow-sm"
@@ -287,15 +356,16 @@
               Denah Rumah Resmi Nusantara Estate
             </h3>
             <p class="text-xs text-gray-400 uppercase mt-1">
-              Panduan blueprint resmi dimensi tata ruang internal bangunan
+              Dimensi teknis tata ruang internal kawasan perumahan nusantara
+              estate sarolangun
             </p>
           </div>
           <div
             class="flex justify-center bg-abuBg p-4 rounded-xl border border-dashed border-gray-300"
           >
             <img
-              src="assets/Denah.jpg"
-              alt="Denah Rumah Skala Penuh"
+              src="assets/denahbaru.jpeg"
+              alt="Denah Blueprint Arsitektur Terbaru Unit Rumah Perumahan Nusantara Estate Sarolangun"
               class="w-full md:max-w-4xl h-auto rounded-lg"
             />
           </div>
@@ -303,15 +373,18 @@
       </div>
     </main>
 
-    <!-- FOOTER -->
     <footer class="bg-navy text-white border-t border-gray-800 py-16">
       <div
         class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12"
       >
         <div>
-          <h3 class="text-xl font-bold mb-4">PT. Nio Pratama</h3>
-          <p class="text-sm text-gray-400 leading-relaxed max-w-md">
-            Kawasan kota terpadu mandiri Provinsi Jambi.
+          <h3 class="text-xl font-bold mb-4">PT. Nio Tama Properti</h3>
+          <p class="text-sm text-gray-400 leading-relaxed text-justify">
+            PT. Nio Tama Properti telah menjadi salah satu perusahaan properti
+            terkemuka dan paling terdiversifikasi di Indonesia. Dengan mengusung
+            konsep pembangunan berkelanjutan di Provinsi Jambi. Perseroan telah
+            berhasil meraih kepercayaan masyarakat luas dan menjadi perusahaan
+            properti yang terkemuka
           </p>
         </div>
         <div class="flex flex-col space-y-4">
@@ -337,46 +410,27 @@
           </div>
           <div class="flex items-center space-x-3 text-sm text-gray-300">
             <i class="bi bi-facebook text-blue-500 text-lg"></i
-            ><span>Nusantara Estate</span>
+            ><a
+              href="https://www.facebook.com/perumahan.nusantara.estate"
+              target="_blank"
+              class="hover:underline"
+              >Nusantara Estate</a
+            >
           </div>
           <div class="flex items-center space-x-3 text-sm text-gray-300">
             <i class="bi bi-instagram text-pink-500 text-lg"></i
-            ><span>Nusantara Estate</span>
+            ><a
+              href="https://www.instagram.com/perumahan.nusantara_estate?igsh=MTdiYWFwenhjd3Q3cA=="
+              target="_blank"
+              class="hover:underline"
+              >@perumahan.nusantara_estate</a
+            >
           </div>
         </div>
       </div>
     </footer>
 
-    <!-- JAVASCRIPT -->
-    <script>
-      document.getElementById("menu-btn").addEventListener("click", () => {
-        document.getElementById("menu").classList.toggle("hidden");
-      });
-
-      function scrollSlider(arah) {
-        const slider = document.getElementById("landscape-slider");
-        const lebarItem = slider.clientWidth * 0.8;
-        if (arah === "kanan") {
-          slider.scrollLeft += lebarItem;
-        } else {
-          slider.scrollLeft -= lebarItem;
-        }
-      }
-
-      document.addEventListener("DOMContentLoaded", function () {
-        const textTrigger = document.getElementById("landscape-text-trigger");
-        const observerOptions = { root: null, threshold: 0.3 };
-        const textObserver = new IntersectionObserver(function (entries) {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("aktif");
-              textObserver.unobserve(entry.target);
-            }
-          });
-        }, observerOptions);
-
-        if (textTrigger) textObserver.observe(textTrigger);
-      });
-    </script>
+    <script src="js/main.js"></script>
+    <script src="js/slider.js"></script>
   </body>
 </html>
